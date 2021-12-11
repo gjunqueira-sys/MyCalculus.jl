@@ -1,0 +1,13 @@
+name = "MyCalculus"
+uuid = "3b6c02bf-1996-4182-8236-18f83452d8e8"
+authors = ["Gil Junqueira"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.7"
+
+[targets]
+test = ["Test"]
