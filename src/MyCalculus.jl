@@ -22,7 +22,7 @@ dy/dx = f(x, y) where y(x₀) = y₀ and x₀ = x₀.
     y: array of y values
 
 """
-function EulerMethod(f::Function, x₀::Real, y₀::Real, step::Real=0.5, n::Real=100.0)
+function EulerMethod(f::Function, x₀::Real, y₀::Real, step::Real, n::Real=100.0)
 
     y =[y₀] #initialize y array with intiial condition
     x = [x for x in range(x₀, step=step, length=n)] # array of x values starting with initial condition
@@ -32,7 +32,7 @@ function EulerMethod(f::Function, x₀::Real, y₀::Real, step::Real=0.5, n::Rea
 
     for k in 2:length(x) # iterate through x values starting at 2nd element
 
-        push!(y, y[k-1] + m[k-1]*0.5) # push new y value to array using Euler's Method
+        push!(y, y[k-1] + m[k-1]*step) # push new y value to array using Euler's Method
         push!(m, f(x[k], y[k])) # push slope to array
     end
     
